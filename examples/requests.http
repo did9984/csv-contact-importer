@@ -1,0 +1,24 @@
+### 検証プレビュー（既定値）
+POST http://localhost:8083/api/imports
+Content-Type: multipart/form-data; boundary=sample
+
+--sample
+Content-Disposition: form-data; name="file"; filename="contacts.csv"
+Content-Type: text/csv
+
+< ./contacts.csv
+--sample--
+
+### 実際の登録
+POST http://localhost:8083/api/imports?dryRun=false
+Content-Type: multipart/form-data; boundary=sample
+
+--sample
+Content-Disposition: form-data; name="file"; filename="contacts.csv"
+Content-Type: text/csv
+
+< ./contacts.csv
+--sample--
+
+### 連絡先一覧の取得
+GET http://localhost:8083/api/contacts

@@ -1,0 +1,5 @@
+$ErrorActionPreference = 'Stop'
+$exampleFile = Join-Path $PSScriptRoot 'contacts.csv'
+& curl.exe -sS -F "file=@$exampleFile" 'http://localhost:8083/api/imports'
+& curl.exe -sS -F "file=@$exampleFile" 'http://localhost:8083/api/imports?dryRun=false'
+Invoke-RestMethod -Uri 'http://localhost:8083/api/contacts'

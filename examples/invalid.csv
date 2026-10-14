@@ -1,0 +1,4 @@
+name,email,department
+Kim,kim@example.com,Backend
+Lee,KIM@example.com,Platform
+Park,invalid-email,Backend
